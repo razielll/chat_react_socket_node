@@ -6,12 +6,20 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "concurrently": "^5.0.2",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-icons": "^3.8.0",
+    "react-scripts": "3.3.0",
+    "socket.io": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node src/server/index.js",
+    "dev": "concurrently \"npm run react\" \"npm run server\"",
+    "react": "react-scripts start",
+    "server": "nodemon src/server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "uuid": "^3.3.3"
   }
 }
