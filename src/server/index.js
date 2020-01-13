@@ -13,7 +13,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join((__dirname + '/../../build/index.html')));
 });
 
-const SocketManager = require('./SocketManager');
+const SocketManager = require('./socketManager.js');
 
 io.on('connection', SocketManager);
 
