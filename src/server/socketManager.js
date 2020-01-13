@@ -2,7 +2,6 @@ const io = require('./index').io;
 const { VERIFY_USER, USER_CONNECTED, USER_DISCONNECTED, LOGOUT, COMMUNITY_CHAT, MESSAGE_RECEIVED, MESSAGE_SENT, TYPING, PRIVATE_MESSAGE, NEW_CHAT_USER } = require('../events');
 const { createUser, createMessage, createChat } = require('../factories');
 
-
 let communityChat = createChat({ isCommunity: true });
 let connectedUsers = {};
 

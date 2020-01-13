@@ -1,11 +1,17 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
 const server = require('http').Server(app);
 
 const io = module.exports.io = require('socket.io')(server);
 
-const PORT = process.env.PORT || 3232;
+const PORT = process.env.PORT || 3000;
 app.use(express.static(__dirname + '/../../build'));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join((__dirname + '/../../build/index.html')));
+});
 
 const SocketManager = require('./SocketManager');
 
