@@ -5,7 +5,7 @@ import io from 'socket.io-client';
 
 import { USER_CONNECTED, LOGOUT, VERIFY_USER } from '../events.js'
 
-const SOCKET_URL = 'http://localhost:3232';
+const SOCKET_URL = '/';
 export default class Layout extends Component {
     constructor(props) {
         super(props);
