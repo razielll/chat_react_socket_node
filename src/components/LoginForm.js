@@ -13,6 +13,7 @@ export default class LoginForm extends Component {
         }
     };
 
+
     setUser = ({ user, isUser }) => {
         if (isUser) {
             this.setError('User name taken');
@@ -32,7 +33,7 @@ export default class LoginForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const { nickname } = this.state;
-        const { socket } = this.props
+        const { socket } = this.props;
         socket.emit(VERIFY_USER, nickname, this.setUser);
     };
 

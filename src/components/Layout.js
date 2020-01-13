@@ -16,19 +16,23 @@ export default class Layout extends Component {
         }
     };
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.initSocket();
     };
 
     initSocket = () => {
-        const socket = io(SOCKET_URL);
+        const socket = io('/');
+        console.log('socket', socket);
         socket.on('connect', () => {
             if (this.state.user) {
-                this.reconnect(socket)
+                this.reconnect(socket);
             } else {
                 console.log('Connected');
             }
         })
+        this.setState({ socket })
+        this.forceUpdate()
+
     };
 
     reconnect = (socket) => {
