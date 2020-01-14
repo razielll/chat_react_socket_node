@@ -1,4 +1,5 @@
-# Visit the live chat app at:
+# More advanced chat version, with private messaging, community chat and group chat.
+## Visit the live chat app at:
 https://chatappreactnode.herokuapp.com/
 
 STACK: 
